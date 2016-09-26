@@ -3,7 +3,7 @@
 var app = getApp()
 Page({
   data: {
-    motto: '豆瓣电影 Top250',
+    motto: '豆瓣电影榜单',
     userInfo: {}
   },
   //事件处理函数

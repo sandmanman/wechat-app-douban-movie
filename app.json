@@ -8,7 +8,10 @@
   "window":{
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#268dcd",
-    "navigationBarTitleText": "豆瓣电影 Top250",
+    "navigationBarTitleText": "豆瓣电影榜单",
     "navigationBarTextStyle":"white"
+  },
+  "networkTimeout":{
+    "request":2000
   }
 }

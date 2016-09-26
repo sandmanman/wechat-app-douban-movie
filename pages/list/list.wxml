@@ -1,0 +1,13 @@
+<view class="container">
+    <view class="list-container">
+        <navigator url="../detail">
+            <view class="list-item">
+                <image scaleToFill src=""/>
+                <text>电影名称</text>
+                <text>分数</text>
+                <text>评价</text>
+            </view>
+        </navigator>
+    </view>
+</view>
+
