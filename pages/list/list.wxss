@@ -1,0 +1,4 @@
+.movie-cover-small {
+    width: 128px;
+    height: 179px;
+}

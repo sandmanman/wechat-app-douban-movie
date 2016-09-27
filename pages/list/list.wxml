@@ -1,13 +1,25 @@
-<view class="container">
-    <view class="list-container">
-        <navigator url="../detail">
-            <view class="list-item">
-                <image scaleToFill src=""/>
-                <text>电影名称</text>
-                <text>分数</text>
-                <text>评价</text>
+<view class="page panel">
+    <view class="page-bd">
+        <view class="weui-panel weui-panel-access">
+            <view class="weui-panel-bd">
+                
+                <view class="weui-media-box-appmsg" wx:for="{{list}}" wx:for-index="id">
+                    <navigator url="../detail">
+                        <view class="weui-media-hd">
+                            <image src="{{item.images.small}}" class="movie-cover-small"/>
+                        </view>
+                        <view class="weui-media-bd">
+                            <text class="weui-media-title">{{item.title}}</text>
+                            <view class="weui-media-info">
+                                <text class="weui-media-info-meta">{{item.rating.average}}</text>
+                            </view>
+                        </view>
+                    </navigator>
+                </view>
+                
             </view>
-        </navigator>
+        </view>
     </view>
 </view>
+
 

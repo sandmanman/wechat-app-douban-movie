@@ -8,6 +8,7 @@ Page({
   },
   onReady:function(){
     // 页面渲染完成
+    var that = this;
     // https请求
     wx.request({
         url: 'https://api.douban.com//v2/movie/top250',
@@ -16,7 +17,11 @@ Page({
         },
         success: function(res) {
             // 收到开发者服务成功返回的回调函数，res = {data: '开发者服务器返回的内容'}
-            console.log(res.data.count)
+            //console.log(res.data.count)
+            that.setData({
+              list: res.data.subjects
+            })
+            console.log(res.data.subjects)
         },
         fail: function() {
             // 接口调用失败
