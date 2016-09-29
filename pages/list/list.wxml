@@ -22,4 +22,7 @@
     </view>
 </view>
 
+<loading hidden="{{loadingHidden}}" bindchange="loadingChange">
+    {{loadingText}}
+</loading>
 

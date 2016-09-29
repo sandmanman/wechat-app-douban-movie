@@ -1,9 +1,11 @@
 Page({
   data:{
-    list: {}
+    list: {},
+    loadingHidden:false,
+    loadingText: '加载中'
   },
   onLoad:function(options){
-    // loading: true
+    //loading: true
     // 页面初始化 options为页面跳转所带来的参数
   },
   onReady:function(){
@@ -21,7 +23,12 @@ Page({
             that.setData({
               list: res.data.subjects
             })
-            console.log(res.data.subjects)
+            console.log(res.data.subjects);
+
+            that.setData({
+              loadingHidden: true,
+              loadingText: ''
+            })
         },
         fail: function() {
             // 接口调用失败
@@ -39,5 +46,12 @@ Page({
   },
   onUnload:function(){
     // 页面关闭
+  },
+  loadingChange: function() {
+    // loading
+    this.setData( {
+        loadingHidden: false,
+        loadingText: '加载中'
+    });
   }
 })
