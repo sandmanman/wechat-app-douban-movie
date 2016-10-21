@@ -1,4 +1,15 @@
+.movie-item .weui-media-box__hd{
+    line-height: 70px;
+}
+.movie-item .weui-media-box__hd,
 .movie-cover-small {
-    width: 128px;
-    height: 179px;
+    width: 60px;
+    height: 84px;
+}
+.rating-nums {
+    color: #e09015;
+}
+.movie-item .rating-nums {
+    margin-right: 10px;
+    font-size: 18px;
 }

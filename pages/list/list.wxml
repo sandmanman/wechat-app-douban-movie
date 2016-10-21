@@ -1,22 +1,25 @@
 <view class="page panel">
     <view class="page-bd">
-        <view class="weui-panel weui-panel-access">
-            <view class="weui-panel-bd">
-                
-                <view class="weui-media-box-appmsg" wx:for="{{list}}" wx:for-index="id">
-                    <navigator url="../detail">
-                        <view class="weui-media-hd">
+        <view class="weui-panel weui-panel_access">
+            <view class="weui-panel__hd">豆瓣电影TOP250</view>
+
+            <view class="weui-panel__bd">
+
+                <navigator url="../detail" wx:for="{{list}}" wx:for-index="id">
+                    <view class="weui-media-box weui-media-box_appmsg movie-item">
+                        <view class="weui-media-box__hd">
                             <image src="{{item.images.small}}" class="movie-cover-small"/>
                         </view>
-                        <view class="weui-media-bd">
-                            <text class="weui-media-title">{{item.title}}</text>
-                            <view class="weui-media-info">
-                                <text class="weui-media-info-meta">{{item.rating.average}}</text>
+                        <view class="weui-media-box__bd">
+                            <view class="weui-media-box__title">{{item.title}}</view>
+                            <view class="weui-media-box__desc">
+                                <text class="rating-nums">{{item.rating.average}}</text>
+                                <text>{{item.collect_count}}人看过</text>
                             </view>
                         </view>
-                    </navigator>
-                </view>
-                
+                    </view>
+                </navigator>
+
             </view>
         </view>
     </view>
@@ -25,4 +28,3 @@
 <loading hidden="{{loadingHidden}}" bindchange="loadingChange">
     {{loadingText}}
 </loading>
-
