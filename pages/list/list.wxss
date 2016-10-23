@@ -6,10 +6,6 @@
     width: 60px;
     height: 84px;
 }
-.rating-nums {
-    color: #e09015;
-}
-.movie-item .rating-nums {
+.movie-item .rating {
     margin-right: 10px;
-    font-size: 18px;
 }

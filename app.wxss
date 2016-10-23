@@ -10,11 +10,109 @@
 }
 
 page {
+    font-size: 14px;
     line-height: 1.6;
     font-family: "Helvetica Neue", sans-serif;
     background-color: #f8f8f8;
 }
 
+/* rating stars */
+.rating {
+    color: #e09015;
+    font-size: 16px;
+}
+
+.bigstar50,
+.bigstar45,
+.bigstar40,
+.bigstar35,
+.bigstar30,
+.bigstar25,
+.bigstar20,
+.bigstar15,
+.bigstar10,
+.bigstar05,
+.bigstar00 {
+    display: inline-block;
+    width: 75px;
+    height: 15px;
+    margin: -1px 0 0 0;
+    overflow: hidden;
+
+    background: url(../../images/ic_rating_m.png) no-repeat;
+    background: -webkit-image-set(
+        url(../../images/ic_rating_m.png) 1x,
+        url(../../images/ic_rating_m@2x.png) 2x
+        ) no-repeat;
+}
+.bigstar50 {
+    background-position: 0 0
+}
+
+.bigstar45 {
+    background-position: 0 -15px
+}
+
+.bigstar40 {
+    background-position: 0 -30px
+}
+
+.bigstar35 {
+    background-position: 0 -45px
+}
+
+.bigstar30 {
+    background-position: 0 -60px
+}
+
+.bigstar25 {
+    background-position: 0 -75px
+}
+
+.bigstar20 {
+    background-position: 0 -90px
+}
+
+.bigstar15 {
+    background-position: 0 -105px
+}
+
+.bigstar10 {
+    background-position: 0 -120px
+}
+
+.bigstar05 {
+    background-position: 0 -135px
+}
+
+.bigstar00 {
+    background-position: 0 -150px
+}
+
+
+.allstar50,
+.allstar45,
+.allstar40,
+.allstar35,
+.allstar30,
+.allstar25,
+.allstar20,
+.allstar15,
+.allstar10,
+.allstar05,
+.allstar00 {
+    display: inline-block;
+    background: url(../../images/ic_rating_s.png) no-repeat;
+    background: -webkit-image-set(
+        url(../../images/ic_rating_s.png) 1x,
+        url(../../images/ic_rating_s@2x.png) 2x
+        ) no-repeat;
+    width: 55px;
+    height: 11px;
+    margin: 0 3px 0 0;
+    overflow: hidden
+}
+/* rating stars End */
 
 .weui-panel {
   background-color: #FFFFFF;

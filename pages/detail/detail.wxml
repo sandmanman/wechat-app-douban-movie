@@ -1,0 +1,39 @@
+<!--detail.wxml-->
+<view class="page detail-page">
+    <view class="page-bd">
+        <!-- 详细 End -->
+        <view class="weui-panel movie-detail-panel">
+            <view class="weui-panel__bd">
+                <view class="movie-cover" style="background-image:url('{{detail.images.large}}');"></view>
+
+                <view class="weui-media-box weui-media-box_text">
+                    <view class="weui-media-box__title">{{detail.title}}</view>
+                    <view class="weui-media-box__info">
+                        <text class="weui-media-box__info__meta rating-stars bigstar{{detail.rating.stars}}"></text>
+                        <text class="weui-media-box__info__meta rating">{{detail.rating.average}}</text>
+                        <text class="weui-media-box__info__meta">{{detail.collect_count}}人看过</text>
+                    </view>
+                    <view class="weui-media-box__info">
+                        <text class="weui-media-box__info__meta">{{detail.year}}</text>
+                        <text class="weui-media-box__info__meta">{{detail.countries}}</text>
+                        <text class="weui-media-box__info__meta">{{detail.genres}}</text>
+                    </view>
+                    <view class="weui-media-box__desc">{{detail.summary}}</view>
+                </view>
+            </view>
+        </view>
+        <!-- 详细 End -->
+
+        <!-- 导演 演员 S -->
+        <view class="weui-panel movie-detail-panel">
+            <view class="weui-panel__hd">主演</view>
+            <view class="weui-panel__bd">
+            </view>
+        </view>
+        <!-- 导演 演员 End -->
+    </view>
+</view>
+
+<loading hidden="{{loadingHidden}}" bindchange="loadingChange">
+    {{loadingText}}
+</loading>
