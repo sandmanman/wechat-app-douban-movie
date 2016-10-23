@@ -19,7 +19,6 @@ page {
 /* rating stars */
 .rating {
     color: #e09015;
-    font-size: 16px;
 }
 
 .bigstar50,

@@ -17,7 +17,6 @@
                                 <view class="weui-media-box__desc">
                                     <text class="allstar{{item.rating.stars}}"></text>
                                     <text class="rating">{{item.rating.average}}</text>
-                                    <text>{{item.collect_count}}人看过</text>
                                 </view>
                             </view>
                         </view>
