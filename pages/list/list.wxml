@@ -2,27 +2,24 @@
 <view class="page panel">
     <view class="page-bd">
         <view class="weui-panel weui-panel_access">
-            <view class="weui-panel__hd">豆瓣电影TOP250</view>
-
             <view class="weui-panel__bd">
 
-                    <block wx:for="{{list}}" wx:for-index="id">
-                        <navigator url="../detail/detail?id={{item.id}}&title={{item.title}}">
-                            <view class="weui-media-box weui-media-box_appmsg movie-item">
-                                <view class="weui-media-box__hd">
-                                    <image src="{{item.images.small}}" class="movie-cover-small"/>
-                                </view>
-                                <view class="weui-media-box__bd">
-                                    <view class="weui-media-box__title">{{item.title}}</view>
-                                    <view class="weui-media-box__desc">
-                                        <text class="allstar{{item.rating.stars}}"></text>
-                                        <text class="rating">{{item.rating.average}}</text>
-                                    </view>
+                <block wx:for="{{list}}" wx:for-index="id">
+                    <navigator url="../detail/detail?id={{item.id}}&title={{item.title}}">
+                        <view class="weui-media-box weui-media-box_appmsg movie-item">
+                            <view class="weui-media-box__hd">
+                                <image src="{{item.images.small}}" class="movie-cover-small"/>
+                            </view>
+                            <view class="weui-media-box__bd">
+                                <view class="weui-media-box__title">{{item.title}}</view>
+                                <view class="weui-media-box__desc">
+                                    <text class="allstar{{item.rating.stars}}"></text>
+                                    <text class="rating">{{item.rating.average}}</text>
                                 </view>
                             </view>
-                        </navigator>
-                    </block>
-
+                        </view>
+                    </navigator>
+                </block>
 
             </view>
         </view>

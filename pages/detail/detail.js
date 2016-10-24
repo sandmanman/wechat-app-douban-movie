@@ -1,5 +1,5 @@
 // 电影详细
-// 
+//
 
 var app = getApp();
 var api = require('../../utils/api.js');
