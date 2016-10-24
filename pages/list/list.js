@@ -1,3 +1,8 @@
+
+// 电影列表
+//
+
+var app = getApp();
 var api = require('../../utils/api.js');
 
 Page({
