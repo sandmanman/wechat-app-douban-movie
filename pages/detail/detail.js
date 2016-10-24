@@ -1,10 +1,12 @@
 // 电影详细
+// 
+
+var app = getApp();
 var api = require('../../utils/api.js');
 
 Page({
     data: {
         detail: {},
-        comment: {},
         loadingHidden: false,
         loadingText: '加载中'
     },
@@ -39,8 +41,12 @@ Page({
             }
         });
     },
-    onReady: function(options){
+    onReady: function(){
         // 页面渲染完成
+        var movieTitle = this.data.detail.title;
+        wx.setNavigationBarTitle({
+            title: movieTitle
+        });
     },
     loadingChange: function() {
         // loading
