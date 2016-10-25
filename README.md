@@ -1,6 +1,6 @@
 # 微信小程序 豆瓣电影
 
-**榜单**
+榜单API URL
 
 - [正在热映](https://api.douban.com/v2/movie/in_theaters)
 - [即将上映](https://api.douban.com/v2/movie/coming_soon)
