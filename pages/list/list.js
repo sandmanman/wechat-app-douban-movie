@@ -8,7 +8,7 @@ var api = require('../../utils/api.js');
 Page({
     // data 页面的初始数据
     data: {
-        list: {},
+        list: [],
         title: '豆瓣电影',
         loadingHidden: false,
         loadingText: '加载中'
@@ -32,20 +32,16 @@ Page({
             success: function(res) {
                 // 收到开发者服务成功返回的回调函数，res = {data: '开发者服务器返回的内容'}
                 that.setData({
-                    list: res.data.subjects
+                    list: res.data.subjects,
+                    title: res.data.title,
+                    loadingHidden: true
                 });
                 // console.log(res.data.subjects);
 
-                that.setData({
-                    loadingHidden: true,
-                    loadingText: ''
+                wx.setNavigationBarTitle({
+                    title: res.data.title
                 });
 
-                // 页面标题调用
-                var pageTitle = res.data.title;
-                wx.setNavigationBarTitle({
-                    title: pageTitle
-                });
 
             },
             fail: function() {
@@ -61,6 +57,9 @@ Page({
          * 一个页面只会调用一次，代表页面已经准备妥当，可以和视图层进行交互。
          * 对界面的设置如wx.setNavigationBarTitle请在onReady之后设置。
          */
+        wx.setNavigationBarTitle({
+            title: this.data.title
+        });
     },
     onShow: function() {
         /* 监听页面显示
@@ -83,8 +82,7 @@ Page({
     loadingChange: function() {
         // loading
         this.setData({
-            loadingHidden: false,
-            loadingText: '加载中'
+            loadingHidden: false
         });
     }
 });
