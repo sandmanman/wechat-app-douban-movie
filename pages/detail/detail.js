@@ -12,8 +12,8 @@ Page({
     },
     onLoad: function(options) {
         var that = this;
-        var movidID = options.id;
-        var apiURL = api.movieSubject + movidID;
+        var movieID = options.id;
+        var apiURL = api.movieSubject + movieID;
 
         // https请求
         wx.request({
