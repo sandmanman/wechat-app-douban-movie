@@ -9,11 +9,13 @@ Page({
     // data 页面的初始数据
     data: {
         list: [],
+        start: 0,
         title: '豆瓣电影',
         loadingHidden: false,
-        loadingText: '加载中'
+        loadingText: '加载中',
+        loadMoreBtn: 'none'
     },
-    onLoad: function() {
+    onLoad: function(start) {
         /* 监听页面加载
          * 一个页面只会调用一次
          * 参数可以获取wx.navigateTo和wx.redirectTo及<navigator/>中的 query
@@ -21,8 +23,10 @@ Page({
 
         // 页面初始化 options为页面跳转所带来的参数
 
+        var start = this.data.start;
+
         var that = this;
-        var apiURL = api.topHead;
+        var apiURL = api.topHead + '?start=' + start;
         // https请求
         wx.request({
             url: apiURL,
@@ -34,14 +38,15 @@ Page({
                 that.setData({
                     list: res.data.subjects,
                     title: res.data.title,
-                    loadingHidden: true
+                    loadingHidden: true,
+                    loadMoreBtn: 'block'
                 });
                 // console.log(res.data.subjects);
+                console.log(res.data.start);
 
                 wx.setNavigationBarTitle({
                     title: res.data.title
                 });
-
 
             },
             fail: function() {
@@ -60,6 +65,8 @@ Page({
         wx.setNavigationBarTitle({
             title: this.data.title
         });
+
+        console.log('onReady');
     },
     onShow: function() {
         /* 监听页面显示
@@ -78,6 +85,17 @@ Page({
     },
     onPullDownRefresh: function() {
         // 监听用户下拉动作
+    },
+    loadMore: function() {
+        // 点击加载更多
+        if ( !(this.data.start === 240) ) {
+            this.data.start += 20;
+            console.log('点击加载更多--start='+this.data.start);
+
+        } else {
+            console.warn('最后一页了，按钮应该disabled');
+        }
+
     },
     loadingChange: function() {
         // loading

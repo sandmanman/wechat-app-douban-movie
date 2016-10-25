@@ -23,6 +23,10 @@
 
             </view>
         </view>
+
+        <view class="weui-btn-area" style="display:{{loadMoreBtn}}">
+            <button type="default" hidden="{{loadMoreHidden}}" bindtap="loadMore">加载更多</button>
+        </view>
     </view>
 </view>
 
