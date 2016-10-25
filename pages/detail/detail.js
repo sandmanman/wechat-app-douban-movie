@@ -32,6 +32,12 @@ Page({
                     loadingHidden: true,
                     loadingText: ''
                 });
+
+                // 电影标题调用
+                var movieTitle = res.data.title;
+                wx.setNavigationBarTitle({
+                    title: movieTitle
+                });
             },
             fail: function() {
                 // 接口调用失败
@@ -43,10 +49,7 @@ Page({
     },
     onReady: function(){
         // 页面渲染完成
-        var movieTitle = this.data.detail.title;
-        wx.setNavigationBarTitle({
-            title: movieTitle
-        });
+
     },
     loadingChange: function() {
         // loading

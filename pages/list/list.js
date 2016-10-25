@@ -8,6 +8,7 @@ var api = require('../../utils/api.js');
 Page({
     data: {
         list: {},
+        title: '豆瓣电影',
         loadingHidden: false,
         loadingText: '加载中'
     },
@@ -33,6 +34,12 @@ Page({
                 that.setData({
                     loadingHidden: true,
                     loadingText: ''
+                });
+
+                // 页面标题调用
+                var pageTitle = res.data.title;
+                wx.setNavigationBarTitle({
+                    title: pageTitle
                 });
             },
             fail: function() {
