@@ -4,7 +4,12 @@
         <!-- 详细 End -->
         <view class="weui-panel movie-detail-panel">
             <view class="weui-panel__bd">
-                <view class="movie-cover" style="background-image:url('{{detail.images.large}}');"></view>
+                <view class="movie-cover">
+                    <view class="cover-bg" style="background-image:url('{{detail.images.large}}');"></view>
+                    <view class="cover-item">
+                        <image src="{{detail.images.large}}" class="cover"/>
+                    </view>
+                </view>
 
                 <view class="weui-media-box weui-media-box_text">
                     <view class="weui-media-box__title">{{detail.title}}</view>
@@ -23,13 +28,37 @@
         </view>
         <!-- 详细 End -->
 
-        <!-- 导演 演员 S -->
+        <!-- 导演 S -->
+        <view class="weui-panel movie-detail-panel">
+            <view class="weui-panel__hd">导演</view>
+            <view class="weui-panel__bd">
+                <view class="weui-media-box weui-flex">
+                    <block wx:for="{{detail.directors}}">
+                        <view class="weui-flex__item movie-casts-item">
+                            <image src="{{item.avatars.small}}" class="cover"/>
+                            <view class="name">{{item.name}}</view>
+                        </view>
+                    </block>
+                </view>
+            </view>
+        </view>
+        <!-- 导演 End -->
+
+        <!-- 主演 S -->
         <view class="weui-panel movie-detail-panel">
             <view class="weui-panel__hd">主演</view>
             <view class="weui-panel__bd">
+                <view class="weui-media-box weui-flex">
+                    <block wx:for="{{detail.casts}}">
+                        <view class="weui-flex__item movie-casts-item">
+                            <image src="{{item.avatars.small}}" class="cover"/>
+                            <view class="name">{{item.name}}</view>
+                        </view>
+                    </block>
+                </view>
             </view>
         </view>
-        <!-- 导演 演员 End -->
+        <!-- 主演 End -->
     </view>
 </view>
 
