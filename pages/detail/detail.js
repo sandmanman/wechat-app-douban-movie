@@ -6,14 +6,16 @@ var api = require('../../utils/api.js');
 
 Page({
     data: {
-        detail: {},
+        detail: [],
+        title: '',
         loadingHidden: false,
         loadingText: '加载中'
     },
     onLoad: function(options) {
-        var that = this;
-        var movieID = options.id;
-        var apiURL = api.movieSubject + movieID;
+        var that = this,
+            movieID = options.id,
+            movieTitle = options.title,
+            apiURL = api.movieSubject + movieID;
 
         // https请求
         wx.request({
@@ -24,20 +26,16 @@ Page({
             success: function(res) {
                 // 收到开发者服务成功返回的回调函数，res = {data: '开发者服务器返回的内容'}
                 that.setData({
-                    detail: res.data
+                    detail: res.data,
+                    title: res.data.title,
+                    loadingHidden: true
                 });
                 //console.log(res.data);
 
-                that.setData({
-                    loadingHidden: true,
-                    loadingText: ''
+                wx.setNavigationBarTitle({
+                    title: res.data.title
                 });
 
-                // 电影标题调用
-                var movieTitle = res.data.title;
-                wx.setNavigationBarTitle({
-                    title: movieTitle
-                });
             },
             fail: function() {
                 // 接口调用失败
@@ -48,14 +46,14 @@ Page({
         });
     },
     onReady: function(){
-        // 页面渲染完成
-
+        wx.setNavigationBarTitle({
+            title: this.data.title
+        });
     },
     loadingChange: function() {
         // loading
         this.setData({
-            loadingHidden: false,
-            loadingText: '加载中'
+            loadingHidden: false
         });
     }
 });
