@@ -62,4 +62,8 @@
     </view>
 </view>
 
-<loading hidden="{{hidden}}" bindchange="loadingChange">加载中...</loading>
+<loading hidden="{{loadingHidden}}" bindchange="loadingChange">加载中...</loading>
+
+<modal confirm-text="返回" hidden="{{modalHidden}}" no-cancel bindconfirm="modalChange">
+    <view>豆瓣电影还未收录该部影片</view>
+</modal>

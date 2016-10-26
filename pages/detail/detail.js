@@ -7,8 +7,9 @@ var api = require('../../utils/api.js');
 Page({
     data: {
         detail: [],
-        title: '',
-        hidden: false,
+        title: '电影详细',
+        loadingHidden: false,
+        modalHidden: true
     },
     onLoad: function(options) {
         var that = this,
@@ -24,17 +25,25 @@ Page({
             },
             success: function(res) {
                 // 收到开发者服务成功返回的回调函数，res = {data: '开发者服务器返回的内容'}
-                that.setData({
-                    detail: res.data,
-                    title: res.data.title,
-                    hidden: true
-                });
-                //console.log(res.data);
 
-                wx.setNavigationBarTitle({
-                    title: res.data.title
-                });
+                if ( res.data.code === 5000 ) {
+                    console.error(res.data.msg);
+                    that.setData({
+                        loadingHidden: true,
+                        modalHidden: false
+                    });
+                    return false;
+                } else {
+                    that.setData({
+                        detail: res.data,
+                        title: res.data.title,
+                        loadingHidden: true
+                    });
 
+                    wx.setNavigationBarTitle({
+                        title: res.data.title
+                    });
+                }
             },
             fail: function() {
                 // 接口调用失败
@@ -52,7 +61,11 @@ Page({
     loadingChange: function() {
         // loading
         this.setData({
-            hidden: false
+            loadingHidden: false
         });
+    },
+    modalChange: function(e) {
+        // 影片不存在返回上一页
+        wx.navigateBack();
     }
 });
