@@ -12,7 +12,7 @@
                             </view>
                             <view class="weui-media-box__bd">
                                 <view class="weui-media-box__title">
-                                    {{item.title}}
+                                    <text>{{item.title}}</text>
                                     <text style="color:#999;">({{item.year}})</text>
                                 </view>
                                 <view class="weui-media-box__desc casts">
@@ -33,7 +33,7 @@
         </view>
 
         <view class="weui-btn-area" style="display:{{display}}">
-            <button type="default" bindtap="loadMore">加载更多</button>
+            <button type="default" disabled="{{disabled}}" loading="{{loading}}" bindtap="loadMore">{{loadMoreBtnText}}</button>
         </view>
     </view>
 </view>
