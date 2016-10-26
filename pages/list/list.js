@@ -55,11 +55,12 @@ Page({
     loadMore: function() {
         var that = this;
         // 点击加载更多
-        if ( !(this.data.start === 240) ) {
+        if ( this.data.start !== 240 ) {
             //this.data.start += 20;
             //console.log('点击加载更多start='+this.data.start);
             that.setData({
-                loading: true
+                loading: true,
+                disabled: true
             });
             requestData(that, that.data.start += 20);
         } else {
@@ -98,10 +99,11 @@ function requestData(that, targetStart) {
                 title: res.data.title,
                 hidden: true,
                 loading: false,
+                disabled: false,
                 display: 'block'
             });
             // console.log(res.data.subjects);
-            if ( res.data.title != null ) {
+            if ( res.data.title !== null ) {
                 wx.setNavigationBarTitle({
                     title: res.data.title
                 });
