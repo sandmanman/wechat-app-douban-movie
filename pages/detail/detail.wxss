@@ -35,15 +35,15 @@
     z-index: 10;
 
     display: inline-block;
-    padding: 5px;
+    padding: 4px;
 
     background-color: #fff;
     box-shadow: 0 0 7px rgba(0,0,0,.3);
 }
 .movie-detail-panel .movie-cover .cover {
     display: block;
-    width: 200px;
-    height: 279px;
+    width: 180px;
+    height: 251px;
 }
 .movie-detail-panel .weui-media-box__desc{
     display: block;
