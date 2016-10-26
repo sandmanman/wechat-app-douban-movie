@@ -11,10 +11,18 @@
                                 <image src="{{item.images.small}}" class="movie-cover-small"/>
                             </view>
                             <view class="weui-media-box__bd">
-                                <view class="weui-media-box__title">{{item.title}}</view>
+                                <view class="weui-media-box__title">
+                                    {{item.title}}
+                                    <text style="color:#999;">({{item.year}})</text>
+                                </view>
+                                <view class="weui-media-box__desc casts">
+                                    <block wx:for="{{item.casts}}">
+                                        <text>{{item.name + " / "}}</text>
+                                    </block>
+                                </view>
                                 <view class="weui-media-box__desc">
                                     <text class="allstar{{item.rating.stars}}"></text>
-                                    <text class="rating">{{item.rating.average}}</text>
+                                    <text>{{item.rating.average}}</text>
                                 </view>
                             </view>
                         </view>

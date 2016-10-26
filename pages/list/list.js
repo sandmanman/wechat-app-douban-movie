@@ -61,8 +61,9 @@ Page({
          * 一个页面只会调用一次，代表页面已经准备妥当，可以和视图层进行交互。
          * 对界面的设置如wx.setNavigationBarTitle请在onReady之后设置。
          */
+        var that = this;
         wx.setNavigationBarTitle({
-            title: this.data.title
+            title: that.data.title
         });
 
         console.log('onReady');

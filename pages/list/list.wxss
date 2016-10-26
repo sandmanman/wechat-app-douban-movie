@@ -6,9 +6,6 @@
     width: 60px;
     height: 84px;
 }
-.movie-item .rating {
-    margin-right: 10px;
-}
 .weui-media-box:after {
   content: " ";
   position: absolute;
@@ -24,6 +21,8 @@
           transform: scaleY(0.5);
   left: 15px;
 }
-.load-more-btn-area {
-    display: none;
+.weui-media-box__desc.casts {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    -webkit-line-clamp: 1;
 }
