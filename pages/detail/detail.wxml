@@ -62,6 +62,4 @@
     </view>
 </view>
 
-<loading hidden="{{loadingHidden}}" bindchange="loadingChange">
-    {{loadingText}}
-</loading>
+<loading hidden="{{hidden}}" bindchange="loadingChange">加载中...</loading>

@@ -8,8 +8,7 @@ Page({
     data: {
         detail: [],
         title: '',
-        loadingHidden: false,
-        loadingText: '加载中'
+        hidden: false,
     },
     onLoad: function(options) {
         var that = this,
@@ -28,7 +27,7 @@ Page({
                 that.setData({
                     detail: res.data,
                     title: res.data.title,
-                    loadingHidden: true
+                    hidden: true
                 });
                 //console.log(res.data);
 
@@ -53,7 +52,7 @@ Page({
     loadingChange: function() {
         // loading
         this.setData({
-            loadingHidden: false
+            hidden: false
         });
     }
 });

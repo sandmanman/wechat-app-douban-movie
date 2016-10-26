@@ -24,12 +24,10 @@
             </view>
         </view>
 
-        <view class="weui-btn-area" style="display:{{loadMoreBtn}}">
-            <button type="default" hidden="{{loadMoreHidden}}" bindtap="loadMore">加载更多</button>
+        <view class="weui-btn-area" style="display:{{display}}">
+            <button type="default" bindtap="loadMore">加载更多</button>
         </view>
     </view>
 </view>
 
-<loading hidden="{{loadingHidden}}" bindchange="loadingChange">
-    {{loadingText}}
-</loading>
+<loading hidden="{{hidden}}" bindchange="loadingChange">加载中...</loading>

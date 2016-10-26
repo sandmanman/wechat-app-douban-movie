@@ -11,9 +11,8 @@ Page({
         list: [],
         start: 0,
         title: '豆瓣电影',
-        loadingHidden: false,
-        loadingText: '加载中',
-        loadMoreBtn: 'none'
+        hidden: false,
+        display: 'none'
     },
     onLoad: function(start) {
         /* 监听页面加载
@@ -38,8 +37,8 @@ Page({
                 that.setData({
                     list: res.data.subjects,
                     title: res.data.title,
-                    loadingHidden: true,
-                    loadMoreBtn: 'block'
+                    hidden: true,
+                    display: 'block'
                 });
                 // console.log(res.data.subjects);
                 console.log(res.data.start);
@@ -100,7 +99,7 @@ Page({
     loadingChange: function() {
         // loading
         this.setData({
-            loadingHidden: false
+            hidden: false
         });
     }
 });
