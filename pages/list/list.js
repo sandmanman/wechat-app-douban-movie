@@ -10,7 +10,7 @@ Page({
     data: {
         list: [],
         start: 0,
-        title: '豆瓣电影',
+        title: '豆瓣电影榜',
         hidden: false,
         display: 'none',
         loadMore: {
