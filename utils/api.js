@@ -1,11 +1,10 @@
 // API Movie
-var HOST = 'https://api.douban.com/v2/';
+var HOST = 'https://api.douban.com/v2/movie';
 
-var topHead = HOST + 'movie/top250',
-    movieSubject = HOST + 'movie/subject/';
+var topHead = HOST + '/top250',
+    movieSubject = HOST + '/subject/';
 
 module.exports = {
-    // API
-    topHead : topHead,
-    movieSubject : movieSubject
+    topHead: topHead,
+    movieSubject: movieSubject
 };

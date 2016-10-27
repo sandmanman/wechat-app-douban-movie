@@ -39,11 +39,12 @@ Page({
                         title: res.data.title,
                         loadingHidden: true
                     });
-
-                    wx.setNavigationBarTitle({
-                        title: res.data.title
-                    });
                 }
+
+                // 页面标题设为电影名
+                wx.setNavigationBarTitle({
+                    title: res.data.title
+                });
             },
             fail: function() {
                 // 接口调用失败
