@@ -11,7 +11,8 @@ Page({
         list: [],
         start: 0,
         title: '豆瓣电影榜',
-        hidden: false,
+        loadingHidden: false,
+        ratingHidden: false,
         display: 'none',
         loadMore: {
             disabled: false,
@@ -19,13 +20,13 @@ Page({
             btnText: '加载更多'
         }
     },
-    handleLoadMore: function(that, targetStart) {
+    handleLoadMore: function(that, type, targetStart) {
         /*
          * 请求数据
         */
-        var apiURL = api.topHead;
+        var apiURL = api.host;
         wx.request({
-            url: apiURL + '?start=' + targetStart,
+            url: apiURL + '/' + type + '?start=' + targetStart,
             header: {
                 'Content-Type': 'application/json'
             },
@@ -34,7 +35,7 @@ Page({
                 that.setData({
                     list: that.data.list.concat(res.data.subjects),
                     title: res.data.title,
-                    hidden: true,
+                    loadingHidden: true,
                     display: 'block',
                     loadMore: {
                         loading: false,
@@ -59,13 +60,21 @@ Page({
             }
         });
     },
-    onLoad: function() {
+    onLoad: function(options) {
         /* 监听页面加载
          * 一个页面只会调用一次
          * 参数可以获取wx.navigateTo和wx.redirectTo及<navigator/>中的 query
          */
-        var that = this;
-        this.handleLoadMore(that, this.data.start);
+        var that = this,
+            viewType = options.type;
+
+        if ( viewType == "coming_soon" ) {
+            that.setData({
+                ratingHidden: true
+            });
+        }
+
+        this.handleLoadMore(that, viewType, this.data.start);
     },
     onReady: function() {
         /* 监听页面初次渲染完成
@@ -103,31 +112,33 @@ Page({
             url: '../detail/detail?id=' + movieID + '&title=' + movieTile
         });
     },
-    loadMoreTap: function() {
-        // 点击加载更多
-        //
-        var that = this;
-        if ( this.data.start !== 240 ) {
-            that.setData({
-                loadMore: {
-                    loading: true,
-                    disabled: false,
-                    btnText: ''
-                }
-            });
-
-            this.handleLoadMore(that, that.data.start += 20);
-        } else {
-            that.setData({
-                loadMore: {
-                    disabled: true,
-                    loading: false,
-                    btnText: '数据加载完了'
-                }
-            });
-            console.warn('数据加载完了');
-        }
-    },
+    // loadMoreTap: function(options) {
+    //     // 点击加载更多
+    //     //
+    //     var that = this,
+    //         viewType = options.type;
+    //
+    //     if ( this.data.start !== 240 ) {
+    //         that.setData({
+    //             loadMore: {
+    //                 loading: true,
+    //                 disabled: false,
+    //                 btnText: ''
+    //             }
+    //         });
+    //
+    //         this.handleLoadMore(that, viewType, this.data.start);
+    //     } else {
+    //         that.setData({
+    //             loadMore: {
+    //                 disabled: true,
+    //                 loading: false,
+    //                 btnText: '数据加载完了'
+    //             }
+    //         });
+    //         console.warn('数据加载完了');
+    //     }
+    // },
     loadingChange: function() {
         // loading
         this.setData({

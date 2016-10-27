@@ -9,7 +9,8 @@ Page({
         detail: [],
         title: '电影详细',
         loadingHidden: false,
-        modalHidden: true
+        modalHidden: true,
+        ratingHidden: false
     },
     onLoad: function(options) {
         var that = this,
@@ -41,6 +42,12 @@ Page({
                     });
                 }
 
+                if ( res.data.rating.average === 0 ) {
+                    that.setData({
+                        ratingHidden: true
+                    });
+                }
+
                 // 页面标题设为电影名
                 wx.setNavigationBarTitle({
                     title: res.data.title
@@ -48,6 +55,7 @@ Page({
             },
             fail: function() {
                 // 接口调用失败
+                console.error('detail request fail:请求时间超时或...');
             },
             complete: function() {
                 // 接口调用结束的回调函数（调用成功、失败都会执行）

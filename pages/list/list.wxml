@@ -11,14 +11,13 @@
                     <view class="weui-media-box__bd">
                         <view class="weui-media-box__title">
                             <text>{{item.title}}</text>
-                            <text style="color:#999;">({{item.year}})</text>
                         </view>
                         <view class="weui-media-box__desc casts">
                             <block wx:for="{{item.casts}}">
                                 <text>{{item.name + " / "}}</text>
                             </block>
                         </view>
-                        <view class="weui-media-box__desc">
+                        <view class="weui-media-box__desc" hidden="{{ratingHidden}}">
                             <text class="allstar{{item.rating.stars}}"></text>
                             <text>{{item.rating.average}}</text>
                         </view>
@@ -28,10 +27,10 @@
             </view>
         </view>
 
-        <view class="weui-btn-area" style="display:{{display}}">
+        <!-- <view class="weui-btn-area" hidden="true">
             <button type="default" disabled="{{loadMore.disabled}}" loading="{{loadMore.loading}}" bindtap="loadMoreTap">{{loadMore.btnText}}</button>
-        </view>
+        </view> -->
     </view>
 </view>
 
-<loading hidden="{{hidden}}" bindchange="loadingChange">加载中...</loading>
+<loading hidden="{{loadingHidden}}" bindchange="loadingChange">加载中...</loading>
