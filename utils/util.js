@@ -26,12 +26,6 @@ function formatDate(source, format) {
     return format
 }
 
-function formatNumber(n) {
-    n = n.toString()
-    return n[1] ? n : '0' + n
-}
-
 module.exports = {
-    formatDate: formatDate,
-    formatNumber: formatNumber
+    formatDate: formatDate
 }
