@@ -29,7 +29,7 @@
         </view>
 
         <view class="weui-btn-area" style="display:{{display}}">
-            <button type="default" disabled="{{disabled}}" loading="{{loading}}" bindtap="loadMoreTap">{{loadMoreBtnText}}</button>
+            <button type="default" disabled="{{loadMore.disabled}}" loading="{{loadMore.loading}}" bindtap="loadMoreTap">{{loadMore.btnText}}</button>
         </view>
     </view>
 </view>

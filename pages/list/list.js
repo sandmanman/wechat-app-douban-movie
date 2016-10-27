@@ -12,10 +12,12 @@ Page({
         start: 0,
         title: '豆瓣电影',
         hidden: false,
-        disabled: false,
-        loading: false,
         display: 'none',
-        loadMoreBtnText: '加载更多'
+        loadMore: {
+            disabled: false,
+            loading: false,
+            btnText: '加载更多'
+        }
     },
     handleLoadMore: function(that, targetStart) {
         /*
@@ -33,9 +35,12 @@ Page({
                     list: that.data.list.concat(res.data.subjects),
                     title: res.data.title,
                     hidden: true,
-                    loading: false,
-                    disabled: false,
-                    display: 'block'
+                    display: 'block',
+                    loadMore: {
+                        loading: false,
+                        disabled: false,
+                        btnText: '加载更多'
+                    }
                 });
                 // console.log(res.data.subjects);
                 if ( res.data.title !== null ) {
@@ -104,15 +109,21 @@ Page({
         var that = this;
         if ( this.data.start !== 240 ) {
             that.setData({
-                loading: true,
-                disabled: true
+                loadMore: {
+                    loading: true,
+                    disabled: false,
+                    btnText: ''
+                }
             });
 
             this.handleLoadMore(that, that.data.start += 20);
         } else {
             that.setData({
-                disabled: true,
-                loadMoreBtnText: '加载完了'
+                loadMore: {
+                    disabled: true,
+                    loading: false,
+                    btnText: '数据加载完了'
+                }
             });
             console.warn('数据加载完了');
         }
