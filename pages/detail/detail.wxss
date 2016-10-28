@@ -17,8 +17,8 @@
     background-position: center;
     background-size: cover;
 
-    -webkit-filter: blur(5px);
-            filter: blur(5px);
+    -webkit-filter: blur(2px);
+            filter: blur(2px);
 }
 .movie-detail-panel .movie-cover .cover-bg:after {
     content: '';
@@ -27,9 +27,9 @@
     top: 0;
     bottom: 0;
     right: 0;
-    z-index: -1;
+    z-index: 1;
 
-    background: rgba(0,0,0,.2);
+    background: rgba(0,0,0,.55);
 }
 .movie-detail-panel .movie-cover .cover-item {
     position: relative;
