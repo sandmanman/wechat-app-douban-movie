@@ -33,7 +33,7 @@
             <view class="weui-panel__hd">导演</view>
             <view class="weui-panel__bd">
                 <view class="weui-media-box weui-flex">
-                    <block wx:for="{{detail.directors}}">
+                    <block wx:for="{{detail.directors}}" wx:key="id">
                         <view class="weui-flex__item movie-casts-item">
                             <image src="{{item.avatars.small}}" class="cover"/>
                             <view class="name">{{item.name}}</view>
@@ -49,7 +49,7 @@
             <view class="weui-panel__hd">主演</view>
             <view class="weui-panel__bd">
                 <view class="weui-media-box weui-flex">
-                    <block wx:for="{{detail.casts}}">
+                    <block wx:for="{{detail.casts}}" wx:key="id">
                         <view class="weui-flex__item movie-casts-item">
                             <image src="{{item.avatars.small}}" class="cover"/>
                             <view class="name">{{item.name}}</view>

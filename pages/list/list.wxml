@@ -4,7 +4,7 @@
         <view class="weui-panel weui-panel_access">
             <view class="weui-panel__bd">
 
-                <view wx:for="{{list}}" bindtap="movieSubject" data-id="{{item.id}}" data-title="{{item.title}}" class="weui-media-box weui-media-box_appmsg movie-item">
+                <view wx:for="{{list}}" wx:key="id" bindtap="movieSubject" data-id="{{item.id}}" data-title="{{item.title}}" class="weui-media-box weui-media-box_appmsg movie-item">
                     <view class="weui-media-box__hd">
                         <image src="{{item.images.small}}" class="movie-cover-small"/>
                     </view>
@@ -13,7 +13,7 @@
                             <text>{{item.title}}</text>
                         </view>
                         <view class="weui-media-box__desc casts">
-                            <block wx:for="{{item.casts}}">
+                            <block wx:for="{{item.casts}}" wx:key="id">
                                 <text>{{item.name + " / "}}</text>
                             </block>
                         </view>
