@@ -32,5 +32,3 @@
         </view> -->
     </view>
 </view>
-
-<loading hidden="{{loadingHidden}}" bindchange="loadingChange">加载中...</loading>

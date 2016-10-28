@@ -11,9 +11,7 @@ Page({
         list: [],
         start: 0,
         title: '豆瓣电影榜',
-        loadingHidden: false,
         ratingHidden: false,
-        display: 'none',
         loadMore: {
             disabled: false,
             loading: false,
@@ -32,10 +30,16 @@ Page({
             },
             success: function(res) {
                 // 收到开发者服务成功返回的回调函数，res = {data: '开发者服务器返回的内容'}
+
+                wx.hideToast();
+
+                wx.setNavigationBarTitle({
+                    title: res.data.title
+                });
+
                 that.setData({
                     list: that.data.list.concat(res.data.subjects),
                     title: res.data.title,
-                    loadingHidden: true,
                     display: 'block',
                     loadMore: {
                         loading: false,
@@ -43,17 +47,22 @@ Page({
                         btnText: '加载更多'
                     }
                 });
-                // console.log(res.data.subjects);
-                if ( res.data.title !== null ) {
-                    wx.setNavigationBarTitle({
-                        title: res.data.title
-                    });
-                }
 
             },
             fail: function() {
                 // 接口调用失败
                 console.error('request fail:请求时间超时或...');
+                wx.showModal({
+                    title: '提示',
+                    content: '请求数据超时',
+                    showCancel: false,
+                    confirmText: '返回',
+                    success: function(res) {
+                        if (res.confirm) {
+                            wx.navigateBack();
+                        }
+                    }
+                });
             },
             complete: function() {
                 // 接口调用结束的回调函数（调用成功、失败都会执行）
@@ -65,6 +74,13 @@ Page({
          * 一个页面只会调用一次
          * 参数可以获取wx.navigateTo和wx.redirectTo及<navigator/>中的 query
          */
+
+        wx.showToast({
+            title: '加载中',
+            icon: 'loading',
+            duration: 0
+        });
+
         var that = this,
             viewType = options.type;
 
@@ -138,11 +154,5 @@ Page({
     //         });
     //         console.warn('数据加载完了');
     //     }
-    // },
-    loadingChange: function() {
-        // loading
-        this.setData({
-            hidden: false
-        });
-    }
+    // }
 });
