@@ -8,7 +8,7 @@
                 <view bindchange="inTheaters" data-type="in_theaters" class="weui-media-box">
 
                     <scroll-view class="scroll-view_H" scroll-x="true" style="width: 100%">
-                        <block wx:for="{{inTheaters}}" wx:key="id">
+                        <block wx:for="{{inTheaters}}" wx:key="{{item.id}}">
                             <view class="scroll-view-item_H">
                                 <view class="cover">
                                     <image src="{{item.images.small}}" class="movie-cover-small"/>
@@ -17,7 +17,7 @@
                             </view>
                         </block>
                     </scroll-view>
-                    
+
                 </view>
             </view>
             <view class="weui-panel__ft">
