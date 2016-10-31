@@ -33,7 +33,16 @@
             <view class="weui-panel__hd">即将上映</view>
             <view class="weui-panel__bd">
                 <view bindchange="comingSoon" data-type="coming_soon" class="weui-media-box">
-
+                    <scroll-view class="scroll-view_H" scroll-x="true" style="width: 100%">
+                        <block wx:for="{{comingSoon}}" wx:key="{{item.id}}">
+                            <view class="scroll-view-item_H">
+                                <view class="cover">
+                                    <image src="{{item.images.small}}" class="movie-cover-small"/>
+                                </view>
+                                <text>{{item.title}}</text>
+                            </view>
+                        </block>
+                    </scroll-view>
                 </view>
             </view>
             <view class="weui-panel__ft">
@@ -49,7 +58,16 @@
             <view class="weui-panel__hd">豆瓣电影Top250</view>
             <view class="weui-panel__bd">
                 <view bindchange="topHead" data-type="top250" class="weui-media-box">
-
+                    <scroll-view class="scroll-view_H" scroll-x="true" style="width: 100%">
+                        <block wx:for="{{topHead}}" wx:key="{{item.id}}">
+                            <view class="scroll-view-item_H">
+                                <view class="cover">
+                                    <image src="{{item.images.small}}" class="movie-cover-small"/>
+                                </view>
+                                <text>{{item.title}}</text>
+                            </view>
+                        </block>
+                    </scroll-view>
                 </view>
             </view>
             <view class="weui-panel__ft">

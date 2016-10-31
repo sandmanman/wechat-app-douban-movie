@@ -60,35 +60,46 @@ Page({
         console.log(viewType);
         wx.request({
             url: api.host + '/' + viewType,
+            //url: 'http://localhost/mock/' + viewType + '.json',
             header: {
                 'Content-Type': 'application/json'
             },
             success: function(res) {
                 // 收到开发者服务成功返回的回调函数，res = {data: '开发者服务器返回的内容'}
-                //var sliceData = res.data.subjects.slice(0,9);
-                wx.hideToast();
-
-                switch(viewType) {
+                var sliceData = res.data.subjects.slice(0,9);
+                switch (viewType) {
                     case 'in_theaters':
                         that.setData({
-                            inTheaters: res.data.subjects.slice(0,9)
+                            inTheaters: sliceData
                         });
                         break;
                     case 'coming_soon':
                         that.setData({
-                            comingSoon: res.data.subjects.slice(0,9)
+                            comingSoon: sliceData
                         });
                         break;
                     case 'top250':
                         that.setData({
-                            topHead: res.data.subjects.slice(0,9)
+                            topHead: sliceData
                         });
                         break;
                 }
+
+                wx.hideToast();
             },
             fail: function() {
                 // 接口调用失败
-                console.error('list request fail:请求时间超时或...');
+                switch (viewType) {
+                    case 'in_theaters':
+                        console.error('in_theaters request fail:请求时间超时或...');
+                        break;
+                    case 'coming_soon':
+                        console.error('coming_soon request fail:请求时间超时或...');
+                        break;
+                    case 'top250':
+                        console.error('top250 request fail:请求时间超时或...');
+                        break;
+                }
             },
             complete: function() {
                 // 接口调用结束的回调函数（调用成功、失败都会执行）
