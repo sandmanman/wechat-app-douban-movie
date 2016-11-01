@@ -1,5 +1,5 @@
 /**index.wxss**/
-.movie-cover-small {
+.movie-cover {
     width: 100px;
     height: 143px;
 }
