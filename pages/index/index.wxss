@@ -1,5 +1,26 @@
 /**index.wxss**/
 .movie-cover-small {
-    width: 60px;
-    height: 84px;
+    width: 100px;
+    height: 143px;
+}
+
+.scroll-view_H {
+    overflow-x: auto;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+}
+.scroll-view-item_H {
+    display: inline-block;
+    margin-right: 10px;
+    width: 100px;
+}
+.scroll-view-item_H text {
+    margin-top: 5px;
+    display: block;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-wrap: normal;
+    font-size: 13px;
 }
