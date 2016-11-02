@@ -12,14 +12,14 @@
                         <view class="weui-media-box__title">
                             <text>{{item.title}}</text>
                         </view>
+                        <view class="weui-media-box__desc" hidden="{{ratingHidden}}">
+                            <text class="allstar{{item.rating.stars}}"></text>
+                            <text>{{item.rating.average}}</text>
+                        </view>
                         <view class="weui-media-box__desc casts">
                             <block wx:for="{{item.casts}}" wx:key="id">
                                 <text>{{item.name + " / "}}</text>
                             </block>
-                        </view>
-                        <view class="weui-media-box__desc" hidden="{{ratingHidden}}">
-                            <text class="allstar{{item.rating.stars}}"></text>
-                            <text>{{item.rating.average}}</text>
                         </view>
                     </view>
                 </view>
