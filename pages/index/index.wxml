@@ -2,6 +2,17 @@
 <view class="page panel">
     <view class="page-bd">
 
+        <!-- search bar S -->
+        <view class="weui-search-bar">
+            <form bindsubmit="formSubmit" class="weui-search-bar__form">
+                <view class="weui-search-bar__box">
+                    <icon type="search" size="16" class="weui-icon-search"/>
+                    <input type="text" class="weui-search-bar__input" placeholder-style="color:#aaa" placeholder="输入导演/演员(如：周星驰)或电影类型(如：喜剧)"/>
+                </view>
+            </form>
+        </view>
+        <!-- search bar End -->
+
         <view class="weui-panel">
             <view class="weui-panel__hd">影院热映</view>
             <view class="weui-panel__bd">
