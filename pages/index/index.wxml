@@ -14,7 +14,10 @@
         <!-- search bar End -->
 
         <view class="weui-panel">
-            <view class="weui-panel__hd">影院热映</view>
+            <view bindtap="listView" data-type="in_theaters" class="weui-cell weui-cell_access weui-cell_link">
+                <view class="weui-cell__bd">影院热映</view>
+                <view class="weui-cell__ft"></view>
+            </view>
             <view class="weui-panel__bd">
                 <view bindchange="inTheaters" data-type="in_theaters" class="weui-media-box">
 
@@ -33,17 +36,14 @@
 
                 </view>
             </view>
-            <view class="weui-panel__ft">
-                <view bindtap="listView" data-type="in_theaters" class="weui-cell weui-cell_access weui-cell_link">
-                    <view class="weui-cell__bd">查看更多</view>
-                    <view class="weui-cell__ft"></view>
-                </view>
-            </view>
         </view>
 
 
         <view class="weui-panel">
-            <view class="weui-panel__hd">即将上映</view>
+            <view bindtap="listView" data-type="coming_soon" class="weui-cell weui-cell_access weui-cell_link">
+                <view class="weui-cell__bd">即将上映</view>
+                <view class="weui-cell__ft"></view>
+            </view>
             <view class="weui-panel__bd">
                 <view bindchange="comingSoon" data-type="coming_soon" class="weui-media-box">
                     <scroll-view class="scroll-view_H" scroll-x="true">
@@ -60,17 +60,14 @@
                     </scroll-view>
                 </view>
             </view>
-            <view class="weui-panel__ft">
-                <view bindtap="listView" data-type="coming_soon" class="weui-cell weui-cell_access weui-cell_link">
-                    <view class="weui-cell__bd">查看更多</view>
-                    <view class="weui-cell__ft"></view>
-                </view>
-            </view>
         </view>
 
 
         <view class="weui-panel">
-            <view class="weui-panel__hd">豆瓣电影Top250</view>
+            <view bindtap="listView" data-type="top250" class="weui-cell weui-cell_access weui-cell_link">
+                <view class="weui-cell__bd">豆瓣电影Top250</view>
+                <view class="weui-cell__ft"></view>
+            </view>
             <view class="weui-panel__bd">
                 <view bindchange="topHead" data-type="top250" class="weui-media-box">
                     <scroll-view class="scroll-view_H" scroll-x="true">
@@ -85,12 +82,6 @@
                             </view>
                         </block>
                     </scroll-view>
-                </view>
-            </view>
-            <view class="weui-panel__ft">
-                <view bindtap="listView" data-type="top250" class="weui-cell weui-cell_access weui-cell_link">
-                    <view class="weui-cell__bd">查看更多</view>
-                    <view class="weui-cell__ft"></view>
                 </view>
             </view>
         </view>

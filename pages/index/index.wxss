@@ -1,4 +1,12 @@
 /**index.wxss**/
+.weui-cell__bd {
+    color: #333;
+    font-size: 18px;
+    font-weight: 700;
+}
+.weui-cell:before {
+    display: none !important;
+}
 .movie-cover {
     width: 100px;
     height: 143px;
