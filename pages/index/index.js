@@ -5,6 +5,7 @@ var api = require('../../utils/api.js');
 
 Page({
     data: {
+        type: ['影院热映', '即将上映', '豆瓣电影Top250'],
         inTheaters: [],
         comingSoon: [],
         topHead: []
@@ -60,7 +61,6 @@ Page({
         console.log(viewType);
         wx.request({
             url: api.host + '/' + viewType,
-            //url: 'http://localhost/mock/' + viewType + '.json',
             header: {
                 'Content-Type': 'application/json'
             },
