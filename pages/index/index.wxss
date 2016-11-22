@@ -1,7 +1,7 @@
 /**index.wxss**/
 .weui-cell__bd {
     color: #333;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 700;
 }
 .weui-cell:before {

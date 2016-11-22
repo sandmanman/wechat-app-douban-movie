@@ -15,7 +15,7 @@
 
         <view class="weui-panel">
             <view bindtap="listView" data-type="in_theaters" class="weui-cell weui-cell_access weui-cell_link">
-                <view class="weui-cell__bd">{{type[0]}}</view>
+                <view class="weui-cell__bd">影院热映</view>
                 <view class="weui-cell__ft"></view>
             </view>
             <view class="weui-panel__bd">
@@ -41,7 +41,7 @@
 
         <view class="weui-panel">
             <view bindtap="listView" data-type="coming_soon" class="weui-cell weui-cell_access weui-cell_link">
-                <view class="weui-cell__bd">{{type[1]}}</view>
+                <view class="weui-cell__bd">即将上映</view>
                 <view class="weui-cell__ft"></view>
             </view>
             <view class="weui-panel__bd">
@@ -64,12 +64,12 @@
 
 
         <view class="weui-panel">
-            <view bindtap="listView" data-type="top250" class="weui-cell weui-cell_access weui-cell_link">
-                <view class="weui-cell__bd">{{type[2]}}</view>
+            <view bindtap="listView" data-type="tophead" class="weui-cell weui-cell_access weui-cell_link">
+                <view class="weui-cell__bd">豆瓣电影Top250</view>
                 <view class="weui-cell__ft"></view>
             </view>
             <view class="weui-panel__bd">
-                <view bindchange="topHead" data-type="top250" class="weui-media-box">
+                <view bindchange="tophead" data-type="tophead" class="weui-media-box">
                     <scroll-view class="scroll-view_H" scroll-x="true">
                         <block wx:for="{{topHead}}" wx:key="{{item.id}}">
                             <view class="scroll-view-item_H">

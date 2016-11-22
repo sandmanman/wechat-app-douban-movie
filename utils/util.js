@@ -29,9 +29,46 @@ function formatDate(source, format) {
 // 数据
 var coming_soon = require('../mock/mock-coming_soon.js');
 var in_theaters = require('../mock/mock-in_theaters.js');
-var tophead = require('../mock/mock-top250.js');
-var tophead_next = require('../mock/mock-top250_20.js');
+var tophead = require('../mock/mock-tophead.js');
+var tophead_next = require('../mock/mock-tophead_20.js');
+
+// 获取数据
+function requestData(url) {
+    wx.request({
+        url: url,
+        header: {
+            'content-type': 'application/json'
+        },
+        data: {},
+        success: function(res) {
+            // 收到开发者服务成功返回的回调函数，res = {data: '开发者服务器返回的内容'}
+            console.log('request success');
+        },
+        fail: function() {
+            // 接口调用失败
+            console.log('request fail');
+        },
+        complete: function() {
+            // 接口调用结束的回调函数（调用成功、失败都会执行）
+            console.log('request complete');
+        }
+    });
+}
+
+function getComingSoon() {
+    return coming_soon.coming_soon;
+}
+function getInTheaters() {
+    return in_theaters.in_theaters;
+}
+function getTophead() {
+    return tophead.tophead;
+}
+
 
 module.exports = {
-    formatDate: formatDate
+    formatDate: formatDate,
+    getComingSoon: getComingSoon,
+    getInTheaters: getInTheaters,
+    getTophead: getTophead
 }
