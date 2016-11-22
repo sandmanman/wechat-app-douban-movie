@@ -1,7 +1,9 @@
-{
-    "count": 20,
-    "start": 20,
-    "total": 250,
+
+module.exports = {
+
+}
+
+var tophead = {
     "subjects": [
         {
             "rating": {
@@ -1389,4 +1391,6 @@
         }
     ],
     "title": "豆瓣电影Top250"
-}
+};
+
+module.exports.tophead = tophead;

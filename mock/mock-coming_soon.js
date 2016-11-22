@@ -1,7 +1,9 @@
-{
-    "count": 20,
-    "start": 0,
-    "total": 94,
+
+module.exports = {
+
+}
+
+var coming_soon = {
     "subjects": [
         {
             "rating": {
@@ -1350,4 +1352,6 @@
         }
     ],
     "title": "即将上映的电影"
-}
+};
+
+module.exports.coming_soon = coming_soon;

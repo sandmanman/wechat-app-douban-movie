@@ -3,7 +3,7 @@
 //
 
 var app = getApp();
-var api = require('../../utils/api.js');
+var api = require('../../utils/util.js');
 
 Page({
     // data 页面的初始数据

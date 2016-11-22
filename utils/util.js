@@ -26,6 +26,12 @@ function formatDate(source, format) {
     return format
 }
 
+// 数据
+var coming_soon = require('../mock/mock-coming_soon.js');
+var in_theaters = require('../mock/mock-in_theaters.js');
+var tophead = require('../mock/mock-top250.js');
+var tophead_next = require('../mock/mock-top250_20.js');
+
 module.exports = {
     formatDate: formatDate
 }

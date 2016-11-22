@@ -1,7 +1,9 @@
-{
-    "count": 20,
-    "start": 0,
-    "total": 30,
+
+module.exports = {
+
+}
+
+var in_theaters = {
     "subjects": [
         {
             "rating": {
@@ -1393,4 +1395,6 @@
         }
     ],
     "title": "正在上映的电影-北京"
-}
+};
+
+module.exports.in_theaters = in_theaters;

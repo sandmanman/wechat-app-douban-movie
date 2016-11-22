@@ -2,7 +2,7 @@
 //
 
 var app = getApp();
-var api = require('../../utils/api.js');
+var api = require('../../utils/util.js');
 
 Page({
     data: {
@@ -37,7 +37,7 @@ Page({
                 wx.setNavigationBarTitle({
                     title: res.data.title
                 });
-                
+
                 wx.hideToast();
 
                 if ( res.data.code === 5000 ) {
