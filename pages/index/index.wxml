@@ -3,7 +3,7 @@
     <view class="page-bd">
 
         <!-- search bar S -->
-        <view class="weui-search-bar">
+        <view class="weui-search-bar" style="margin-bottom:-11px;">
             <form bindsubmit="formSubmit" class="weui-search-bar__form">
                 <view class="weui-search-bar__box">
                     <icon type="search" size="16" class="weui-icon-search"/>
@@ -71,7 +71,7 @@
             <view class="weui-panel__bd">
                 <view bindchange="tophead" data-type="tophead" class="weui-media-box">
                     <scroll-view class="scroll-view_H" scroll-x="true">
-                        <block wx:for="{{topHead}}" wx:key="{{item.id}}">
+                        <block wx:for="{{tophead}}" wx:key="{{item.id}}">
                             <view class="scroll-view-item_H">
                                 <navigator url="../detail/detail?id={{item.id}}&title={{item.title}}">
                                     <view class="cover">

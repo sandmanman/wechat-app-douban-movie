@@ -10,7 +10,7 @@ Page({
     data: {
         list: [],
         start: 0,
-        title: '豆瓣电影榜',
+        title: '豆瓣电影',
         ratingHidden: false,
         loadMore: {
             disabled: false,
@@ -35,18 +35,21 @@ Page({
         switch (type) {
             case 'in_theaters':
                 list = util.getInTheaters();
+                that.data.title = "影院热映";
                 break;
             case 'coming_soon':
                 list = util.getComingSoon();
+                that.data.title = "即将上映";
+                that.data.ratingHidden = true;
                 break;
             case 'tophead':
                 list = util.getTophead();
+                that.data.title = "豆瓣电影Top250";
                 break;
 
         };
 
         that.setData({
-            ratingHidden: true,
             list: list.subjects
         });
 
