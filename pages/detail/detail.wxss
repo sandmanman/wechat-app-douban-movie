@@ -2,6 +2,7 @@
     position: relative;
     padding-top: 40px;
     padding-bottom: 40px;
+    margin-top: -5px;
     text-align: center;
 }
 .movie-detail-panel .movie-cover .cover-bg {
@@ -17,8 +18,8 @@
     background-position: center;
     background-size: cover;
 
-    -webkit-filter: blur(2px);
-            filter: blur(2px);
+    -webkit-filter: blur(1.3px);
+            filter: blur(1.3px);
 }
 .movie-detail-panel .movie-cover .cover-bg:after {
     content: '';
@@ -36,11 +37,11 @@
     z-index: 10;
 
     display: inline-block;
-    padding: 4px;
+    padding: 3px;
 
     background: url("../../images/cover_default.png") #fff no-repeat center bottom;
     background-size: cover;
-    box-shadow: 0 0 7px rgba(0,0,0,.3);
+    box-shadow: 0 0 10px rgba(0,0,0,.3);
 }
 .movie-detail-panel .movie-cover .cover {
     display: block;

@@ -41,11 +41,11 @@ Page({
                     title: res.data.title	
                 });
 
-                if ( res.data.rating.average === 0 ) {
-                    that.setData({
-                        ratingHidden: true
-                    });
-                }
+                // if ( res.data.rating.average === 0 ) {
+                //     that.setData({
+                //         ratingHidden: true
+                //     });
+                // }
             },
             fail: function() {
                 // 接口调用失败
