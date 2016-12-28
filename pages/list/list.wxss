@@ -1,3 +1,5 @@
+@import "../../weui-wxss/weui.wxss";
+
 .movie-item .weui-media-box__hd{
     line-height: 70px;
 }

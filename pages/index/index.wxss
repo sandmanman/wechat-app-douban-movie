@@ -1,3 +1,5 @@
+@import "../../weui-wxss/weui.wxss";
+
 /**index.wxss**/
 .weui-cell__bd {
     color: #333;

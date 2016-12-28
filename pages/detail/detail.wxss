@@ -1,3 +1,5 @@
+@import "../../weui-wxss/weui.wxss";
+
 .movie-detail-panel .movie-cover{
     position: relative;
     padding-top: 40px;
