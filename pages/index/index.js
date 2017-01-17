@@ -5,10 +5,36 @@ var util = require('../../utils/util.js');
 
 Page({
     data: {
+        inputShowed: false,
+        inputVal: "",
         inTheaters: [],
         comingSoon: [],
         tophead: []
     },
+    // search bar
+    //
+    showInput: function () {
+        this.setData({
+            inputShowed: true
+        });
+    },
+    hideInput: function () {
+        this.setData({
+            inputVal: "",
+            inputShowed: false
+        });
+    },
+    clearInput: function () {
+        this.setData({
+            inputVal: ""
+        });
+    },
+    inputTyping: function (e) {
+        this.setData({
+            inputVal: e.detail.value
+        });
+    },
+    
     //事件处理函数
     bindViewTap: function() {
         wx.navigateTo({

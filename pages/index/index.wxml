@@ -3,13 +3,21 @@
     <view class="page-bd">
 
         <!-- search bar S -->
-        <view class="weui-search-bar" style="margin-bottom:-11px;">
-            <form bindsubmit="formSubmit" class="weui-search-bar__form">
+        <view class="weui-search-bar">
+            <view class="weui-search-bar__form">
                 <view class="weui-search-bar__box">
-                    <icon type="search" size="16" class="weui-icon-search"/>
-                    <input type="text" class="weui-search-bar__input" placeholder-style="color:#aaa" placeholder="输入导演/演员(如：周星驰)或电影类型(如：喜剧)"/>
+                    <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+                    <input type="text" class="weui-search-bar__input" placeholder="输入导演/演员或电影类型" value="{{inputVal}}" focus="{{inputShowed}}" bindinput="inputTyping" />
+                    <view class="weui-icon-clear" wx:if="{{inputVal.length > 0}}" bindtap="clearInput">
+                        <icon type="clear" size="14"></icon>
+                    </view>
                 </view>
-            </form>
+                <label class="weui-search-bar__label" hidden="{{inputShowed}}" bindtap="showInput">
+                    <icon class="weui-icon-search" type="search" size="14"></icon>
+                    <view class="weui-search-bar__text">搜索</view>
+                </label>
+            </view>
+            <view class="weui-search-bar__cancel-btn" hidden="{{!inputShowed}}" bindtap="hideInput">取消</view>
         </view>
         <!-- search bar End -->
 
